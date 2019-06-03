@@ -6,5 +6,5 @@
        - image: circleci/node: 7
      steps:
        - checkout
-       - run: yarn add
+       - run: npm install
        - run: echo "A first hello"
