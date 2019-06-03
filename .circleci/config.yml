@@ -2,7 +2,7 @@
  jobs: 
    build: 
     docker: 
-      - image: circle/node: 7
+      - image: circle/node:7
     working_directory: ~/tmp
      
      steps: 
