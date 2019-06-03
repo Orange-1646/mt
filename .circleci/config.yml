@@ -1,10 +1,11 @@
  version: 2
- jobs:
-   build:
+ jobs: 
+   build: 
+    docker: 
+      - image: circle/node: 7
     working_directory: ~/tmp
-     docker:
-       - image: circle/node: 7
-     steps:
+     
+     steps: 
        - checkout
        - run: npm install
        - run: echo "A first hello"
