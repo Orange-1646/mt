@@ -5,7 +5,7 @@
       - image: circle/node:7
     working_directory: ~/tmp
      
-     steps: 
-       - checkout
-       - run: npm install
-       - run: echo "A first hello"
+    steps: 
+      - checkout
+      - run: npm install
+      - run: echo "A first hello"
