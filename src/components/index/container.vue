@@ -35,8 +35,8 @@ export default {
     },
     methods: {
         over(e){
+          console.log(e)
             let type = e.target.dataset.type
-            console.log(type)
             if(!type){
                 return false
             }

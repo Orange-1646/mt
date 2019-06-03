@@ -41,7 +41,7 @@
                                 注册
                             </el-button>
                         </router-link>
-                        <router-link to="/">
+                        <router-link :to="{name : 'login'}">
                             <el-button round>
                                 立即登录
                             </el-button>

@@ -45,7 +45,7 @@
         </el-form-item>
       </el-form>
     </div>
-    <div class="footer"></div>register
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -121,7 +121,6 @@ export default {
                   this.$router.push({
                       name: 'login'
                   })
-                  this.$store.commit('setUserName', this.registerForm.userName)
               }
               else{
                   alert(res.data.msg)

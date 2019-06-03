@@ -9,7 +9,7 @@
       <el-col :span="15" class="center">
         <div class="wrapper">
           <el-input @input="input" v-model="searchKey" placeholder="搜索商家或地点" @focus="focus" @blur="blur"></el-input>
-          <el-button type="primary" icon="el-icon-search"></el-button>
+          <el-button @click="search" type="primary" icon="el-icon-search"></el-button>
           <dl class="hotPlace" v-if="isHotPlace">
               <dt>热门搜索</dt>
               <dd v-for="(item, index) in hotPlaceList" :key="index">
@@ -24,7 +24,7 @@
           </dl>
         </div>
         <p class="suggest">
-          <a v-for="(item, index) in suggestList" :key="index" href="#">{{item}}</a>
+          <a @click.prevent="search(item)" v-for="(item, index) in suggestList" :key="index">{{item}}</a>
         </p>
       </el-col>
     </el-row>
@@ -61,6 +61,11 @@ export default {
     ...mapState(['appkey', 'root'])
   },
   methods: {
+    search(key = this.searchKey){
+      this.$router.push({
+        path: `/s/${key}`
+      })
+    },
     input(){
       api.getSearch().then(res=>{
         console.log(res)
